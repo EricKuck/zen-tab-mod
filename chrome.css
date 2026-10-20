@@ -1,4 +1,5 @@
 .tabbrowser-tab .tab-background {
+  --ct-stroke: color-mix(in srgb, var(--ct-color) 55%, transparent);
   --ct-color: var(
     --identity-tab-color,
     var(
@@ -23,16 +24,17 @@
 
 .tabbrowser-tab:not([zen-essential]):is([selected], [visuallyselected], [multiselected])
   .tab-background {
-  border: 2px solid color-mix(in srgb, var(--ct-color) 55%, transparent) !important;
+  border: 2px solid var(--ct-stroke) !important;
 }
 
 .tabbrowser-tab[usercontextid]:not([usercontextid="0"], [zen-essential]):is([selected], [visuallyselected], [multiselected])
   .tab-background {
-  background-image: linear-gradient(
-    to right,
-    color-mix(in srgb, var(--ct-color) 40%, transparent) 29px,
-    color-mix(in srgb, var(--ct-color) 15%, transparent) 29px
-  ) !important;
+  background-image:
+    linear-gradient(to right, var(--ct-stroke) 29px, transparent 29px),
+    linear-gradient(
+      color-mix(in srgb, var(--ct-color) 15%, transparent),
+      color-mix(in srgb, var(--ct-color) 15%, transparent)
+    ) !important;
 }
 
 .tabbrowser-tab[usercontextid]:not([usercontextid="0"], [zenDefaultUserContextId="true"], [zen-essential], [selected], [visuallyselected], [multiselected])
