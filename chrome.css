@@ -10,7 +10,7 @@
 
 @media (-moz-pref("uc.cct.darken_active")) {
   #tabbrowser-tabs .tabbrowser-tab:is([selected], [visuallyselected], [multiselected]) .tab-background {
-    background-color: light-dark(rgb(0 0 0 / 0.12), rgb(0 0 0 / 0.6)) !important;
+    background-color: light-dark(rgb(0 0 0 / 0.08), rgb(0 0 0 / 0.35)) !important;
   }
 }
 
@@ -35,4 +35,8 @@
   #tabbrowser-tabs .tabbrowser-tab[pending] .tab-text {
     opacity: 0.5;
   }
+}
+
+.tabbrowser-tab .tab-context-line {
+  display: none !important;
 }
