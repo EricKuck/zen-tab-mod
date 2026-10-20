@@ -10,7 +10,7 @@
 
 @media (-moz-pref("uc.cct.darken_active")) {
   #tabbrowser-tabs .tabbrowser-tab:is([selected], [visuallyselected], [multiselected]) .tab-background {
-    background-color: light-dark(rgb(0 0 0 / 0.12), rgb(0 0 0 / 0.55)) !important;
+    background-color: light-dark(rgb(0 0 0 / 0.12), rgb(0 0 0 / 0.6)) !important;
   }
 }
 
@@ -23,8 +23,12 @@
 
 .tabbrowser-tab:not([zen-essential]):is([selected], [visuallyselected], [multiselected])
   .tab-background {
-  border: 2.5px solid color-mix(in srgb, var(--ct-color) 60%, transparent) !important;
-  border-left: 32px solid color-mix(in srgb, var(--ct-color) 35%, transparent) !important;
+  border: 2px solid color-mix(in srgb, var(--ct-color) 55%, transparent) !important;
+  background-image: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--ct-color) 25%, transparent) 36px,
+    color-mix(in srgb, var(--ct-color) 15%, transparent) 36px
+  ) !important;
 }
 
 @media (-moz-pref("uc.cct.dim_unloaded")) {
