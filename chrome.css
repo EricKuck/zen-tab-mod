@@ -1,0 +1,35 @@
+.tabbrowser-tab[usercontextid] .tab-background {
+  --ct-color: var(
+    --identity-tab-color,
+    var(--tab-group-color, var(--tab-group-color-gray-invert, currentColor))
+  );
+}
+
+@media (-moz-pref("uc.cct.darken_active")) {
+  #tabbrowser-tabs .tabbrowser-tab:is([selected], [visuallyselected]) .tab-background {
+    background-color: color-mix(
+      in srgb,
+      var(--zen-colors-secondary) 40%,
+      transparent
+    ) !important;
+  }
+}
+
+.tabbrowser-tab[usercontextid]:is([selected], [visuallyselected], [multiselected])
+  .tab-background {
+  background-image: linear-gradient(
+    color-mix(in srgb, var(--ct-color) 40%, transparent),
+    color-mix(in srgb, var(--ct-color) 40%, transparent)
+  ) !important;
+}
+
+.tabbrowser-tab[usercontextid]:not([zen-essential]):is([selected], [visuallyselected], [multiselected])
+  .tab-background {
+  border: 2.5px solid var(--ct-color) !important;
+}
+
+@media (-moz-pref("uc.cct.dim_unloaded")) {
+  #tabbrowser-tabs .tabbrowser-tab[pending] .tab-text {
+    opacity: 0.5;
+  }
+}

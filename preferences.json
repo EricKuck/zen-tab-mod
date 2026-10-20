@@ -1,0 +1,14 @@
+[
+  {
+    "property": "uc.cct.darken_active",
+    "label": "Darken the active tab's background",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "uc.cct.dim_unloaded",
+    "label": "Dim the title of unloaded tabs",
+    "type": "checkbox",
+    "defaultValue": true
+  }
+]
