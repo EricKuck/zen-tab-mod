@@ -26,13 +26,21 @@
   border: 2px solid color-mix(in srgb, var(--ct-color) 55%, transparent) !important;
 }
 
-.tabbrowser-tab[usercontextid]:not([usercontextid="0"], [zenDefaultUserContextId="true"], [zen-essential]):is([selected], [visuallyselected], [multiselected])
+.tabbrowser-tab[usercontextid]:not([usercontextid="0"], [zen-essential]):is([selected], [visuallyselected], [multiselected])
   .tab-background {
   background-image: linear-gradient(
     to right,
     color-mix(in srgb, var(--ct-color) 40%, transparent) 29px,
     color-mix(in srgb, var(--ct-color) 15%, transparent) 29px
   ) !important;
+}
+
+.tabbrowser-tab[usercontextid]:not([usercontextid="0"], [zenDefaultUserContextId="true"], [zen-essential], [selected], [visuallyselected], [multiselected])
+  .tab-background {
+  background-image: linear-gradient(var(--ct-color), var(--ct-color)) !important;
+  background-size: 3px 50% !important;
+  background-position: left 3px center !important;
+  background-repeat: no-repeat !important;
 }
 
 @media (-moz-pref("uc.cct.dim_unloaded")) {
