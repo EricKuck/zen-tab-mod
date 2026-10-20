@@ -26,8 +26,8 @@
   border: 2px solid color-mix(in srgb, var(--ct-color) 55%, transparent) !important;
   background-image: linear-gradient(
     to right,
-    color-mix(in srgb, var(--ct-color) 25%, transparent) 36px,
-    color-mix(in srgb, var(--ct-color) 15%, transparent) 36px
+    color-mix(in srgb, var(--ct-color) 25%, transparent) 29px,
+    color-mix(in srgb, var(--ct-color) 15%, transparent) 29px
   ) !important;
 }
 
