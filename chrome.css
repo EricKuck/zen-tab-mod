@@ -1,31 +1,30 @@
-.tabbrowser-tab[usercontextid] .tab-background {
+.tabbrowser-tab .tab-background {
   --ct-color: var(
     --identity-tab-color,
-    var(--tab-group-color, var(--tab-group-color-gray-invert, currentColor))
+    var(
+      --tab-group-color,
+      var(--tab-group-color-gray-invert, light-dark(rgb(190, 190, 190), rgb(120, 120, 120)))
+    )
   );
 }
 
 @media (-moz-pref("uc.cct.darken_active")) {
-  #tabbrowser-tabs .tabbrowser-tab:is([selected], [visuallyselected]) .tab-background {
-    background-color: color-mix(
-      in srgb,
-      var(--zen-colors-secondary) 40%,
-      transparent
-    ) !important;
+  #tabbrowser-tabs .tabbrowser-tab:is([selected], [visuallyselected], [multiselected]) .tab-background {
+    background-color: light-dark(rgb(0 0 0 / 0.12), rgb(0 0 0 / 0.55)) !important;
   }
 }
 
-.tabbrowser-tab[usercontextid]:is([selected], [visuallyselected], [multiselected])
-  .tab-background {
+.tabbrowser-tab:is([selected], [visuallyselected], [multiselected]) .tab-background {
   background-image: linear-gradient(
-    color-mix(in srgb, var(--ct-color) 40%, transparent),
-    color-mix(in srgb, var(--ct-color) 40%, transparent)
+    color-mix(in srgb, var(--ct-color) 15%, transparent),
+    color-mix(in srgb, var(--ct-color) 15%, transparent)
   ) !important;
 }
 
-.tabbrowser-tab[usercontextid]:not([zen-essential]):is([selected], [visuallyselected], [multiselected])
+.tabbrowser-tab:not([zen-essential]):is([selected], [visuallyselected], [multiselected])
   .tab-background {
-  border: 2.5px solid var(--ct-color) !important;
+  border: 2.5px solid color-mix(in srgb, var(--ct-color) 60%, transparent) !important;
+  border-left: 32px solid color-mix(in srgb, var(--ct-color) 35%, transparent) !important;
 }
 
 @media (-moz-pref("uc.cct.dim_unloaded")) {
