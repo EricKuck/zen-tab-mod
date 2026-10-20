@@ -24,9 +24,13 @@
 .tabbrowser-tab:not([zen-essential]):is([selected], [visuallyselected], [multiselected])
   .tab-background {
   border: 2px solid color-mix(in srgb, var(--ct-color) 55%, transparent) !important;
+}
+
+.tabbrowser-tab[usercontextid]:not([usercontextid="0"], [zenDefaultUserContextId="true"], [zen-essential]):is([selected], [visuallyselected], [multiselected])
+  .tab-background {
   background-image: linear-gradient(
     to right,
-    color-mix(in srgb, var(--ct-color) 25%, transparent) 29px,
+    color-mix(in srgb, var(--ct-color) 40%, transparent) 29px,
     color-mix(in srgb, var(--ct-color) 15%, transparent) 29px
   ) !important;
 }
